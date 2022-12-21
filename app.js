@@ -11,7 +11,12 @@ function checkCustom() {
     customNum.style.visibility = "hidden";
   }
 }
-function CalcSubmit() {
+
+var form = document.getElementById("form");
+form.addEventListener("submit", CalcSubmit);
+
+function CalcSubmit(e) {
+  e.preventDefault();
   var number = document.getElementById("number").value;
   var method = document.getElementById("conversion").value;
   if (method == "custom")
