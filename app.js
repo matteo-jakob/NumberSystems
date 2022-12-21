@@ -1,4 +1,4 @@
-function transformFrom10(input, to) {
+function convertFrom10(input, to) {
   let newNumber = "";
   let rest = input;
   while (rest != 0) {
