@@ -1,0 +1,110 @@
+:root {
+  --whiteP: rgb(255, 242, 245);
+  --white: rgb(233, 213, 218);
+  --brightP: rgb(175, 159, 197);
+  --bright: rgb(152, 135, 174);
+  --gray: rgb(96, 96, 145);
+  --blackP: rgb(78, 72, 121);
+  --black: rgb(54, 48, 98);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  color: var(--bright);
+  padding: 1rem;
+  font-family: "Chivo Mono", monospace;
+}
+
+/*==================== Header ====================*/
+
+header {
+  background-color: var(--black);
+  display: flex;
+  font-family: "Chivo Mono", monospace;
+  height: 10vh;
+}
+
+header > a > img {
+  padding: 10px;
+  border-radius: 100px;
+  width: 4rem;
+  filter: brightness(80%);
+}
+
+header > ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+header > ul > a {
+  text-decoration: none;
+  color: var(--white);
+  padding: 2rem;
+}
+
+header > ul > a:hover {
+  color: var(--whiteP);
+}
+
+/*==================== Body ====================*/
+
+body {
+  margin: 0;
+  background-color: var(--blackP);
+  font-family: "Source Serif Pro", serif;
+}
+
+/*==================== Main ====================*/
+
+main {
+  text-align: center;
+  height: calc(100vh - 10vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-margin: 10vh;
+}
+
+/*==================== Calc ====================*/
+
+#calculator {
+  height: 80vh;
+}
+
+#calculator > #type {
+  font-family: "Chivo Mono", monospace;
+  color: var(--brightP);
+  padding: 3rem 10rem;
+  padding-bottom: 0;
+}
+
+#calculator > #type-content {
+  font-family: "Source Serif Pro", serif;
+  padding: 3rem 12rem;
+  color: var(--bright);
+}
+/*==================== About ====================*/
+
+#about > p {
+  text-align: center;
+  padding: 2rem 15vw;
+  color: var(--bright);
+  font-size: large;
+}
+
+/*=================== Footer ===================*/
+
+footer {
+  background-color: var(--black);
+  color: var(--gray);
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
