@@ -14,8 +14,35 @@ html {
 
 h1 {
   color: var(--bright);
-  padding: 1rem;
+  padding: 1rem 2rem;
   font-family: "Chivo Mono", monospace;
+}
+
+h5 {
+  color: var(--white);
+  background-color: var(--bright);
+  font-size: 2rem;
+  padding: 2rem;
+  margin-top: 0;
+}
+
+button {
+  padding: 1rem;
+  border-radius: 10px;
+  background: none;
+  border: 2px var(--brightP) solid;
+  color: var(--brightP);
+}
+
+button:hover {
+  color: var(--whiteP);
+  border-color: var(--whiteP);
+  transform: translateY(-3px);
+  transition: all 0.5s;
+}
+
+button:active {
+  transform: translateY(3px);
 }
 
 /*==================== Header ====================*/
@@ -74,28 +101,99 @@ main {
 /*==================== Calc ====================*/
 
 #calculator {
-  height: 80vh;
+  height: 90vh;
+}
+
+#calculator > #container {
+  width: 80vh;
+  margin: 0 auto;
+}
+
+#calculator > #container > form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--gray);
+}
+#calculator > #container > form > label {
+  color: var(--white);
+  padding: 1rem;
+}
+
+#calculator > #container > form > #number {
+  background-color: var(--bright);
+  color: var(--white);
+  border: 2px var(--brightP) solid;
+  padding: 1rem;
+}
+
+#calculator > #container > form > #conversion {
+  background-color: var(--bright);
+  color: var(--white);
+  border: 2px var(--brightP) solid;
+  padding: 1rem;
+}
+
+#calculator > #container > form > #custom-number {
+  background-color: var(--bright);
+  color: var(--white);
+  border: 2px var(--brightP) solid;
+  padding: 1rem;
+  margin: 1rem 0;
+  visibility: hidden;
+}
+
+#submit {
+  padding: 1rem;
+  width: min-content;
+  margin: 0 auto;
+  margin-top: 3rem;
+  border-radius: 10px;
+  background: none;
+  border: 2px var(--brightP) solid;
+  color: var(--brightP);
+  cursor: pointer;
+}
+
+#submit:hover {
+  color: var(--whiteP);
+  border-color: var(--whiteP);
+  transform: translateY(-3px);
+  transition: all 0.5s;
+}
+
+#submit:active {
+  transform: translateY(3px);
 }
 
 #calculator > #type {
   font-family: "Chivo Mono", monospace;
   color: var(--brightP);
-  padding: 3rem 10rem;
+  padding-left: 28vw;
   padding-bottom: 0;
+  font-size: 1.5rem;
 }
 
 #calculator > #type-content {
   font-family: "Source Serif Pro", serif;
-  padding: 3rem 12rem;
+  padding: 0 30vw;
   color: var(--bright);
 }
+
 /*==================== About ====================*/
 
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 50vh;
+}
 #about > p {
-  text-align: center;
-  padding: 2rem 15vw;
+  padding: 0 15vw;
   color: var(--bright);
   font-size: large;
+  text-align: center;
 }
 
 /*=================== Footer ===================*/
