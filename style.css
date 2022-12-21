@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 h1 {
@@ -52,11 +53,12 @@ header {
   display: flex;
   font-family: "Chivo Mono", monospace;
   height: 10vh;
+  position: sticky;
+  top: 0;
 }
 
 header > a > img {
   padding: 10px;
-  border-radius: 100px;
   width: 4rem;
   filter: brightness(80%);
 }
@@ -101,6 +103,7 @@ main {
 /*==================== Calc ====================*/
 
 #calculator {
+  scroll-margin: 10vh;
   height: 90vh;
 }
 
@@ -184,6 +187,7 @@ main {
 /*==================== About ====================*/
 
 #about {
+  scroll-margin: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
