@@ -14,9 +14,11 @@ function checkCustom() {
 function CalcSubmit() {
   var number = document.getElementById("number").value;
   var method = document.getElementById("conversion").value;
-  if (method == "custom") {
+  if (method == "custom")
     method = document.getElementById("custom-number").value;
-  }
+  else if (method == "hex") method = 16;
+  else if (method == "binary") method = 2;
+  else if (method == "octal") method = 8;
   convertFrom10(number, method);
 }
 
@@ -28,5 +30,6 @@ function convertFrom10(input, to) {
     newNumber = rest + newNumber;
     input = Math.floor(input / to);
   }
-  return newNumber;
+  var resArea = document.getElementById("calc-result");
+  resArea.innerHTML = newNumber;
 }
