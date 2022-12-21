@@ -27,9 +27,41 @@ function convertFrom10(input, to) {
   let rest = input;
   while (rest != 0) {
     rest = input % to;
-    newNumber = rest + newNumber;
+    input -= rest;
+    if (to > 10 && rest > 9) {
+      rest = numberToLetter(rest);
+    }
+    newNumber += rest;
     input = Math.floor(input / to);
+  }
+  if (input < to) {
+    if (to > 10 && input > 9) {
+      input = numberToLetter(input);
+    }
+    newNumber += input;
   }
   var resArea = document.getElementById("calc-result");
   resArea.innerHTML = newNumber;
+}
+
+function numberToLetter(value) {
+  if (value == 10) {
+    value = "A";
+  }
+  if (value == 11) {
+    value = "B";
+  }
+  if (value == 12) {
+    value = "C";
+  }
+  if (value == 13) {
+    value = "D";
+  }
+  if (value == 14) {
+    value = "E";
+  }
+  if (value == 15) {
+    value = "F";
+  }
+  return value;
 }
