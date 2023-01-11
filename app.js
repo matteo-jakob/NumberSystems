@@ -47,9 +47,45 @@ function convertFrom10(input, to) {
     }
     newNumber += input;
   }
-  newNumber = reverseString(newNumber, to);
+  newNumber = reverseString(newNumber);
   var resArea = document.getElementById("calc-result");
   resArea.innerHTML = newNumber;
+}
+
+function convertTo10(input, from) {
+  let decimal = 0;
+  let inputDigits = input.split("");
+  for (let i = 0; i < inputDigits.length; i++) {
+    let digit = inputDigits[i];
+    if (digit >= "A" && digit <= "F") {
+      digit = letterToNumber(digit);
+    } else {
+      digit = parseInt(digit);
+    }
+    decimal += digit * Math.pow(from, inputDigits.length - i - 1);
+  }
+  return decimal;
+}
+function letterToNumber(value) {
+  if (value == "A") {
+    value = 10;
+  }
+  if (value == "B") {
+    value = 11;
+  }
+  if (value == "C") {
+    value = 12;
+  }
+  if (value == "D") {
+    value = 13;
+  }
+  if (value == "E") {
+    value = 14;
+  }
+  if (value == "F") {
+    value = 15;
+  }
+  return value;
 }
 
 function numberToLetter(value) {
@@ -74,7 +110,7 @@ function numberToLetter(value) {
   return value;
 }
 
-function reverseString(str, to) {
+function reverseString(str) {
   var splitString = str.split("");
   var reverseString = splitString.reverse();
   reverseString.splice(0, 1);
