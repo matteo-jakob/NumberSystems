@@ -72,6 +72,7 @@ header > ul {
 header > ul > a {
   text-decoration: none;
   color: var(--white);
+  margin: auto 1rem;
 }
 
 header > ul > a:hover {
