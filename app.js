@@ -32,7 +32,6 @@ function convertFrom10(input, to) {
   let rest = input;
   while (rest != 0) {
     rest = input % to;
-    console.log("rest " + rest);
     input -= rest;
     if (to > 10 && rest > 9) {
       rest = numberToLetter(rest);
@@ -46,9 +45,7 @@ function convertFrom10(input, to) {
     }
     newNumber += input;
   }
-  console.log("new number " + newNumber);
-  newNumber = reverseString(newNumber);
-  console.log("new number reversed " + newNumber);
+  newNumber = reverseString(newNumber, to);
   var resArea = document.getElementById("calc-result");
   resArea.innerHTML = newNumber;
 }
@@ -75,6 +72,12 @@ function numberToLetter(value) {
   return value;
 }
 
-function reverseString(str) {
-  return str.split("").reverse().join("");
+function reverseString(str, to) {
+  var splitString = str.split("");
+  var reverseString = splitString.reverse();
+  if (to > 10 && to % 2 == 0) {
+    reverseString.splice(0, 2);
+  }
+  var reverseString = reverseString.join("");
+  return reverseString;
 }
