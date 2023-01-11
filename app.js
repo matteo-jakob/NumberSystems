@@ -3,12 +3,14 @@ var conversionMethod = document.getElementById("conversion");
 conversionMethod.addEventListener("change", checkCustom);
 
 function checkCustom() {
-  var customNum = document.getElementById("custom-number");
+  var customNumDiv = document.getElementById("custom-number-div");
   var conversionMethod = document.getElementById("conversion");
   if (conversionMethod.value == "custom") {
-    customNum.style.visibility = "visible";
+    customNumDiv.innerHTML = `
+    <input type="number" max="16" id="custom-number" placeholder="custom value" />
+    `;
   } else {
-    customNum.style.visibility = "hidden";
+    customNumDiv.innerHTML = ``;
   }
 }
 

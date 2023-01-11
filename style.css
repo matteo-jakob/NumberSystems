@@ -72,7 +72,7 @@ header > ul {
 header > ul > a {
   text-decoration: none;
   color: var(--white);
-  padding: 2rem;
+  margin: auto 1rem;
 }
 
 header > ul > a:hover {
@@ -138,20 +138,28 @@ main {
   padding: 1rem;
 }
 
-#calculator > #container > form > #custom-number {
+#calculator > #container > form > div > #custom-number {
   background-color: var(--bright);
   color: var(--white);
   border: 2px var(--brightP) solid;
   padding: 1rem;
   margin: 1rem 0;
-  visibility: hidden;
+  width: calc(100% - 4px - 1rem - 1rem);
+  border-radius: 10px;
 }
 
+#custom-number-div {
+  width: 100%;
+}
+
+#calculator > #container > form > input,
+#calculator > #container > form > select {
+  border-radius: 10px;
+}
 #submit {
-  padding: 1rem;
-  width: min-content;
+  padding: 1.2rem;
   margin: 0 auto;
-  margin-top: 3rem;
+  margin-top: 1rem;
   border-radius: 10px;
   background: none;
   border: 2px var(--brightP) solid;
