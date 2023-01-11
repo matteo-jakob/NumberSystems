@@ -37,6 +37,7 @@ function CalcSubmit(e) {
 
 function convertFrom10(input, to) {
   let newNumber = "";
+  if (input == 0) newNumber = "0";
   let rest = input;
   while (input != 0) {
     rest = input % to;
