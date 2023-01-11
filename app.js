@@ -7,7 +7,11 @@ function checkCustom() {
   var conversionMethod = document.getElementById("conversion");
   if (conversionMethod.value == "custom") {
     customNumDiv.innerHTML = `
-    <input type="number" max="16" id="custom-number" placeholder="custom value" />
+    <input type="number" max="16" id="custom-number" placeholder="Custom value" />
+    `;
+  } else if (conversionMethod.value == "decimal") {
+    customNumDiv.innerHTML = `
+    <input type="number" max="16" id="custom-number" placeholder="Original conversion" />
     `;
   } else {
     customNumDiv.innerHTML = ``;
@@ -26,7 +30,9 @@ function CalcSubmit(e) {
   else if (method == "hex") method = 16;
   else if (method == "binary") method = 2;
   else if (method == "octal") method = 8;
-  convertFrom10(number, method);
+
+  if (method == "decimal") convertTo10(number, method);
+  else convertFrom10(number, method);
 }
 
 function convertFrom10(input, to) {
@@ -64,7 +70,8 @@ function convertTo10(input, from) {
     }
     decimal += digit * Math.pow(from, inputDigits.length - i - 1);
   }
-  return decimal;
+  var resArea = document.getElementById("calc-result");
+  resArea.innerHTML = decimal;
 }
 function letterToNumber(value) {
   if (value == "A") {
