@@ -58,7 +58,7 @@ header {
 
 header > a > img {
   padding: 10px;
-  width: 4rem;
+  height: 8vh;
   filter: brightness(80%);
 }
 
@@ -103,7 +103,6 @@ main {
 
 #calculator {
   scroll-margin: 10vh;
-  height: 90vh;
 }
 
 #calculator > #container {
@@ -197,7 +196,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 50vh;
+  height: 60vh;
 }
 #about > p {
   padding: 0 15vw;
