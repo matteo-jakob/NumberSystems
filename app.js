@@ -47,7 +47,7 @@ function convertFrom10(input, to) {
     }
     newNumber += input;
   }
-  newNumber = reverseString(newNumber);
+  newNumber = reverseString(newNumber, to);
   var resArea = document.getElementById("calc-result");
   resArea.innerHTML = newNumber;
 }
@@ -74,6 +74,12 @@ function numberToLetter(value) {
   return value;
 }
 
-function reverseString(str) {
-  return str.split("").reverse().join("");
+function reverseString(str, to) {
+  var splitString = str.split("");
+  var reverseString = splitString.reverse();
+  if (to > 10 && to % 2 == 0) {
+    reverseString.splice(0, 2);
+  }
+  var reverseString = reverseString.join("");
+  return reverseString;
 }
