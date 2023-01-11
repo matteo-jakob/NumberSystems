@@ -144,6 +144,7 @@ main {
   padding: 1rem;
   margin: 1rem 0;
   width: calc(100% - 4px - 1rem - 1rem);
+  border-radius: 10px;
 }
 
 #custom-number-div {

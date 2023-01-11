@@ -7,7 +7,7 @@ function checkCustom() {
   var conversionMethod = document.getElementById("conversion");
   if (conversionMethod.value == "custom") {
     customNumDiv.innerHTML = `
-    <input type="number" id="custom-number" placeholder="custom value" />
+    <input type="number" max="16" id="custom-number" placeholder="custom value" />
     `;
   } else {
     customNumDiv.innerHTML = ``;
