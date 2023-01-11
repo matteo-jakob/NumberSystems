@@ -38,23 +38,28 @@ function CalcSubmit(e) {
 function convertFrom10(input, to) {
   let newNumber = "";
   if (input == 0) newNumber = "0";
-  let rest = input;
-  while (input != 0) {
-    rest = input % to;
-    input -= rest;
-    if (to > 10 && rest > 9) {
-      rest = numberToLetter(rest);
+  if (isNaN(input)) {
+    newNumber = "0";
+    alert("invalid input");
+  } else {
+    let rest = input;
+    while (input != 0) {
+      rest = input % to;
+      input -= rest;
+      if (to > 10 && rest > 9) {
+        rest = numberToLetter(rest);
+      }
+      newNumber += rest;
+      input = Math.floor(input / to);
     }
-    newNumber += rest;
-    input = Math.floor(input / to);
-  }
-  if (input < to) {
-    if (to > 10 && input > 9) {
-      input = numberToLetter(input);
+    if (input < to) {
+      if (to > 10 && input > 9) {
+        input = numberToLetter(input);
+      }
+      newNumber += input;
     }
-    newNumber += input;
+    newNumber = reverseString(newNumber);
   }
-  newNumber = reverseString(newNumber);
   var resArea = document.getElementById("calc-result");
   resArea.innerHTML = newNumber;
 }
