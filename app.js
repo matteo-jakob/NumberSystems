@@ -32,7 +32,7 @@ function CalcSubmit(e) {
 function convertFrom10(input, to) {
   let newNumber = "";
   let rest = input;
-  while (rest != 0) {
+  while (input != 0) {
     rest = input % to;
     input -= rest;
     if (to > 10 && rest > 9) {
@@ -77,9 +77,7 @@ function numberToLetter(value) {
 function reverseString(str, to) {
   var splitString = str.split("");
   var reverseString = splitString.reverse();
-  if (to > 10 && to % 2 == 0) {
-    reverseString.splice(0, 2);
-  }
+  reverseString.splice(0, 1);
   var reverseString = reverseString.join("");
   return reverseString;
 }
