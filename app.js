@@ -45,6 +45,7 @@ function convertFrom10(input, to) {
     }
     newNumber += input;
   }
+  newNumber = reverseString(newNumber);
   var resArea = document.getElementById("calc-result");
   resArea.innerHTML = newNumber;
 }
@@ -69,4 +70,8 @@ function numberToLetter(value) {
     value = "F";
   }
   return value;
+}
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
 }
