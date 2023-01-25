@@ -30,8 +30,7 @@ function CalcSubmit(e) {
   else if (method == "hex") method = 16;
   else if (method == "binary") method = 2;
   else if (method == "octal") method = 8;
-
-  if (method == "decimal") convertTo10(number, method);
+  else if (method == "decimal") convertTo10(number, method);
   else convertFrom10(number, method);
 }
 
@@ -122,7 +121,7 @@ function numberToLetter(value) {
   }
   return value;
 }
-
+// https://www.freecodecamp.org/news/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb/
 function reverseString(str) {
   var splitString = str.split("");
   var reverseString = splitString.reverse();
