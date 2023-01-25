@@ -30,8 +30,11 @@ function CalcSubmit(e) {
   else if (method == "hex") method = 16;
   else if (method == "binary") method = 2;
   else if (method == "octal") method = 8;
-  else if (method == "decimal") convertTo10(number, method);
-  else convertFrom10(number, method);
+
+  if (method == "decimal") {
+    var customNumb = document.getElementById("custom-number").value;
+    convertTo10(number, customNumb);
+  } else convertFrom10(number, method);
 }
 
 function convertFrom10(input, to) {
